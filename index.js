@@ -5,15 +5,18 @@ function handleSubmit(ev){
   const f = ev.target
   const details = document.querySelector('#details')
 
-  const boldedName = document.createElement('strong')
-  boldedName.textContent = f.personName.value
+  // const boldedName = document.createElement('strong')
+  // boldedName.textContent = f.personName.value
 
-  details.appendChild(boldedName)
-  //const heading = document.querySelector('h1')
-  //heading.textContent = f.personName.value + ' likes ' + f.favoriteAnimal.value + 's!'
-  // const p = f.querySelector('#edit')
-  // p.textContent = 'We asked ' + f.personName.value + ' what their favorite animal is. They said ' + f.favoriteAnimal.value + '!'
-  // p.style.color = f.color.value
+  // details.appendChild(boldedName)
+
+  details.innerHTML = `
+    <ul>
+      <li>Name: ${f.personName.value}</li>
+      <li>Favorite Color: ${f.favoriteColor.value}</li>
+      <li>Age: ${f.age.value} 
+    </ul>
+    `
 }
 
 personForm.addEventListener('submit', handleSubmit)
