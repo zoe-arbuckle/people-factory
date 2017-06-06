@@ -4,7 +4,11 @@ function handleSubmit(ev){
   ev.preventDefault()
   const f = ev.target
   const details = document.querySelector('#details')
-  details.innerHTML += `<strong>${f.personName.value}</strong>`
+
+  const boldedName = document.createElement('strong')
+  boldedName.textContent = f.personName.value
+
+  details.appendChild(boldedName)
   //const heading = document.querySelector('h1')
   //heading.textContent = f.personName.value + ' likes ' + f.favoriteAnimal.value + 's!'
   // const p = f.querySelector('#edit')
