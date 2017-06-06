@@ -4,7 +4,7 @@ function handleSubmit(ev){
   ev.preventDefault()
   const f = ev.target
   const details = document.querySelector('#details')
-  details += f.personName.value
+  details.innerHTML += `<strong>${f.personName.value}</strong>`
   //const heading = document.querySelector('h1')
   //heading.textContent = f.personName.value + ' likes ' + f.favoriteAnimal.value + 's!'
   // const p = f.querySelector('#edit')
