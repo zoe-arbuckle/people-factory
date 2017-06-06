@@ -14,3 +14,17 @@
 ##Day 2 Lab -
 * Add form values to `.details` using `document.createElement` and `appendChild` instead of `innerHTML`
 * Break out some of this functionality into a separate function
+
+##Day 2 Homework -
+* Make a new project from scratch
+    * User can type something in form
+    * Adds that to the end of a list of something
+
+#Bonus 
+* Add to top of list instead of end
+
+#Super Mega Bonus
+* Some kind of promote button that changes the appearance of that item when clicked
+
+#Super Mega Bonus Hyper Fighting
+* Ability to remove items from the list
