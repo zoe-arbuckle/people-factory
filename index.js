@@ -9,11 +9,26 @@ function renderColor(color){
   return div
 }
 
+function renderListItem(label, value){
+  const item = document.createElement('li')
+  item.textContent = `${label}: ${value}`
+  return item
+}
+
+function renderList(personData){
+  const list = document.createElement('ul')
+  //call renderlistitem several times
+  Object.keys(personData).map(function(label) {
+     const item = renderListItem(label, personData[label])
+     list.appendChild(item)
+  })
+  return list
+}
+
 function handleSubmit(ev){
   ev.preventDefault()
   const f = ev.target
   const details = document.querySelector('#details')
-  const favColor = f.favoriteColor.value
 
   // const boldedName = document.createElement('strong')
   // boldedName.textContent = f.personName.value
@@ -27,21 +42,13 @@ function handleSubmit(ev){
   //     <li>Age: ${f.age.value} 
   //   </ul>`
 
-    const list = document.createElement('ul')
-    
-    const nameElement = document.createElement('li')
-    nameElement.textContent = `Name: ${f.personName.value}`
-    
-    const colorElement = document.createElement('li')
-    colorElement.innerHTML = `Favorite Color: ${renderColor(favColor).outerHTML}`
-
-    const ageElement = document.createElement('li')
-    ageElement.textContent = `Age: ${f.age.value}`
+    const person = {
+      name: f.personName.value,
+      color: f.favoriteColor.value,
+      age: f.age.value,
+    }
   
-    list.appendChild(nameElement)
-    list.appendChild(colorElement)
-    list.appendChild(ageElement)
-    details.appendChild(list)
+    details.appendChild(renderList(person))
 }
 
 personForm.addEventListener('submit', handleSubmit)
