@@ -1,7 +1,7 @@
 # People Factory
 
 ## Day 1 Homework - 
-* Add another input to the form.
+* Add another input to the form. 
 * Use the values from both inputs in the 'h1'
 
 ## Super Mega Bonus Credit
