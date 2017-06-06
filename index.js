@@ -1,12 +1,19 @@
 const personForm = document.querySelector('#personForm')
 
+function renderColor(color){
+  const div = document.createElement('div')
+  div.style.backgroundColor = color
+  div.style.width = '50px'
+  div.style.height = '50px'
+  
+  return div
+}
+
 function handleSubmit(ev){
   ev.preventDefault()
   const f = ev.target
   const details = document.querySelector('#details')
   const favColor = f.favoriteColor.value
-
-  const colorDiv = `<div style="background-color: ${favColor}; width: 50px; height: 50px;"></div>`
 
   // const boldedName = document.createElement('strong')
   // boldedName.textContent = f.personName.value
@@ -26,7 +33,7 @@ function handleSubmit(ev){
     nameElement.textContent = `Name: ${f.personName.value}`
     
     const colorElement = document.createElement('li')
-    colorElement.innerHTML = `Favorite Color: ${colorDiv}`
+    colorElement.innerHTML = `Favorite Color: ${renderColor(favColor).outerHTML}`
 
     const ageElement = document.createElement('li')
     ageElement.textContent = `Age: ${f.age.value}`
