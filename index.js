@@ -7,6 +7,7 @@ function handleSubmit(ev){
   heading.textContent = f.personName.value + ' likes the ' + f.favoriteAnimal.value + '!'
   const p = f.querySelector('#edit')
   p.textContent = 'We asked ' + f.personName.value + ' what their favorite animal is. They said ' + f.favoriteAnimal.value + '!'
+  p.style.color = f.color.value
 }
 
 personForm.addEventListener('submit', handleSubmit)
